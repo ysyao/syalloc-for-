@@ -9,14 +9,19 @@
 #import <WebKit/WKWebView.h>
 #import <WebKit/WKNavigationDelegate.h>
 #import <WebKit/WKNavigationAction.h>
+#import "WBOWeiboClient.h"
 
 @interface WBOAuthorizationViewController ()<WKNavigationDelegate>
 
 @property (nonatomic, strong) UINavigationBar *navBar;
 
+@property (nonatomic, strong) UIProgressView *progressView;
+
 @property (nonatomic, strong) UINavigationItem *navItem;
 
 @property (nonatomic, strong) WKWebView *wbView;
+
+@property (nonatomic, strong) WBOWeiboClient *wbClient;
 
 - (void)addConstraints;
 
@@ -33,18 +38,39 @@
     
     [self addConstraints];
     
-    NSString *backUrl = [@"https://backresponse.com/oauth2/back&response_type=code" stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
-    
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"https://api.weibo.com/oauth2/authorize?client_id=2569839235&redirect_uri=%@", backUrl]];
-    // https://api.weibo.com/oauth2/authorize?client_id=123050457758183&redirect_uri=http://www.example.com/response&response_type=code
+    NSURL *url = [WBOWeiboClient oathu2];
 
-    
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
     
     [self.wbView loadRequest:req];
 }
 
+
+/// 监听progress
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if ([keyPath isEqualToString:NSStringFromSelector(@selector(estimatedProgress))] && object == self.wbView) {
+        // estimatedProgress is a value from 0.0 to 1.0
+        // Update your UI here accordingly
+        self.progressView.progress = self.wbView.estimatedProgress;
+    }
+    else if([keyPath isEqualToString:NSStringFromSelector(@selector(progress))]) {
+        BOOL showProgress = self.wbView.estimatedProgress > 0 && self.wbView.estimatedProgress < 1;
+        [self.progressView setHidden:!showProgress];
+    }
+    else {
+        // Make sure to call the superclass's implementation in the else block in case it is also implementing KVO
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+- (void)dealloc
+{
+    [self.wbView removeObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress))];
+    [self.progressView removeObserver:self forKeyPath:NSStringFromSelector(@selector(progress))];
+}
+
 #pragma mark - delegator
+
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     NSString *strReq = [navigationAction.request.URL.absoluteString stringByRemovingPercentEncoding];
     if ([strReq hasPrefix:@"https://backresponse.com/oauth2/back"]) {
@@ -74,12 +100,38 @@
         make.right.equalTo(weakSelf.view.mas_right);
         make.bottom.equalTo(weakSelf.view.mas_bottom);
     }];
+    
+    
+    [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.navBar.mas_left);
+        make.right.equalTo(self.navBar.mas_right);
+        make.bottom.equalTo(self.navBar.mas_bottom);
+    }];
 }
 
 #pragma mark - getter & setter
+- (UIProgressView *)progressView {
+    if (!_progressView) {
+        _progressView = [[UIProgressView alloc] initWithProgressViewStyle:UIProgressViewStyleBar];
+        
+        [_progressView addObserver:self forKeyPath:NSStringFromSelector(@selector(progress)) options:NSKeyValueObservingOptionNew context:nil];
+    }
+    
+    return _progressView;
+}
+
+- (WBOWeiboClient *)wbClient {
+    if (!_wbClient) {
+        _wbClient = [WBOWeiboClient shareInstance];
+    }
+    return _wbClient;
+}
+
 - (UINavigationBar *)navBar {
     if (!_navBar) {
         _navBar = [[UINavigationBar alloc] init];
+        
+        [_navBar addSubview:self.progressView];
         [_navBar setItems:@[self.navItem]];
     }
     return _navBar;
@@ -97,6 +149,7 @@
     if (!_wbView) {
         _wbView = [[WKWebView alloc] init];
         _wbView.navigationDelegate = self;
+        [_wbView addObserver:self forKeyPath:NSStringFromSelector(@selector(estimatedProgress)) options:NSKeyValueObservingOptionNew context:nil];
     }
     return _wbView;
 }
