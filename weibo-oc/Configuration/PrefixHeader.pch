@@ -1,0 +1,31 @@
+//
+//  PrefixHeader.pch
+//  weibo-oc
+//
+//  Created by 易诗尧 on 2020/12/12.
+//
+
+#ifdef __OBJC__
+
+#import "WBOUtils.h"
+#import "Masonry.h"
+#import "WeiboSDK.h"
+#import "AFNetworking.h"
+
+#define WEAKSELF __weak typeof(self) weakSelf = self
+
+#define MainThemeColor [UIColor blackColor]
+
+#ifdef DEBUG
+
+#define WBOLog(...) NSLog(__VA_ARGS__)
+
+#else
+
+#define WBOLog(...)
+
+#endif
+
+#endif
+
+
