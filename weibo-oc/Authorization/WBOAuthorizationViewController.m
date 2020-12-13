@@ -73,7 +73,7 @@
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler {
     NSString *strReq = [navigationAction.request.URL.absoluteString stringByRemovingPercentEncoding];
-    if ([strReq hasPrefix:@"https://backresponse.com/oauth2/back"]) {
+    if ([strReq hasPrefix:[WBOWeiboClient callbackHost]]) {
         WBOLog(@"拦截");
         decisionHandler(WKNavigationActionPolicyCancel);
     } else {
@@ -86,7 +86,7 @@
     [self.view addSubview:self.navBar];
     [self.view addSubview:self.wbView];
     
-    WEAKSELF;
+    weakSelf();
     
     [self.navBar mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(weakSelf.view.mas_top);
@@ -100,7 +100,6 @@
         make.right.equalTo(weakSelf.view.mas_right);
         make.bottom.equalTo(weakSelf.view.mas_bottom);
     }];
-    
     
     [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.equalTo(self.navBar.mas_left);
@@ -127,6 +126,8 @@
     return _wbClient;
 }
 
+
+/// navbar对应navigationItem数组，navigationitem对应了left、right和back的uibarbutton
 - (UINavigationBar *)navBar {
     if (!_navBar) {
         _navBar = [[UINavigationBar alloc] init];

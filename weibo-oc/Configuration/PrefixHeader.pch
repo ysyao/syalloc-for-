@@ -9,10 +9,8 @@
 
 #import "WBOUtils.h"
 #import "Masonry.h"
-#import "WeiboSDK.h"
-#import "AFNetworking.h"
 
-#define WEAKSELF __weak typeof(self) weakSelf = self
+#define weakSelf() __weak typeof(self) weakSelf = self
 
 #define MainThemeColor [UIColor blackColor]
 

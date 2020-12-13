@@ -21,9 +21,15 @@
 
 + (NSURL *)oathu2 {
     
-    NSString *callback = [@"https://backresponse.com/oauth2/back&response_type=code" stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
+    NSString *callback = [NSString stringWithFormat:@"%@", [WBOWeiboClient callbackHost]];
+    
+//    callback = [callback stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLHostAllowedCharacterSet]];
     
     return [NSURL URLWithString:[NSString stringWithFormat:@"https://api.weibo.com/oauth2/authorize?client_id=2569839235&redirect_uri=%@", callback]];
+}
+
++ (NSString *)callbackHost {
+    return @"http://www.backresponse.com";
 }
 
 

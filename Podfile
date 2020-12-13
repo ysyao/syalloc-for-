@@ -9,6 +9,6 @@ target 'weibo-oc' do
   pod 'AFNetworking', '~> 4.0'
   pod 'SDWebImage', '~> 5.0'
   pod 'Masonry'
-  pod "Weibo_SDK", :git => "https://github.com/sinaweibosdk/weibo_ios_sdk.git"
+  pod 'YYModel'
 
 end

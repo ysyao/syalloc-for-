@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSURL *)oathu2;
 
++ (NSString *)callbackHost;
+
 @end
 
 NS_ASSUME_NONNULL_END

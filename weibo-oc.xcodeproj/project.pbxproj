@@ -20,6 +20,11 @@
 		127910262584B3A8004DE687 /* message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 127910222584B3A8004DE687 /* message@3x.png */; };
 		1279102C2584B741004DE687 /* WBOMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1279102B2584B741004DE687 /* WBOMessageViewController.m */; };
 		127910342584B777004DE687 /* WBOMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127910332584B777004DE687 /* WBOMeViewController.m */; };
+		127910532584FE89004DE687 /* WBOWeiboClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 127910522584FE89004DE687 /* WBOWeiboClient.m */; };
+		129A585C2585CAD900F6D9A4 /* WBONetKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A585B2585CAD900F6D9A4 /* WBONetKit.m */; };
+		129A58612585E0E400F6D9A4 /* WBONetKitTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A58602585E0E400F6D9A4 /* WBONetKitTimeline.m */; };
+		129A586B2585F45A00F6D9A4 /* WBOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A586A2585F45A00F6D9A4 /* WBOModel.m */; };
+		129A58722586029600F6D9A4 /* WBOTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A58712586029600F6D9A4 /* WBOTimeline.m */; };
 		496547398F86ACD56C7EC289 /* Pods_weibo_oc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235FA8A3D05C5F0605F545B3 /* Pods_weibo_oc.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +51,17 @@
 		1279102B2584B741004DE687 /* WBOMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOMessageViewController.m; sourceTree = "<group>"; };
 		127910322584B777004DE687 /* WBOMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOMeViewController.h; sourceTree = "<group>"; };
 		127910332584B777004DE687 /* WBOMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOMeViewController.m; sourceTree = "<group>"; };
+		127910512584FE89004DE687 /* WBOWeiboClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOWeiboClient.h; sourceTree = "<group>"; };
+		127910522584FE89004DE687 /* WBOWeiboClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOWeiboClient.m; sourceTree = "<group>"; };
+		129A585A2585CAD900F6D9A4 /* WBONetKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBONetKit.h; sourceTree = "<group>"; };
+		129A585B2585CAD900F6D9A4 /* WBONetKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBONetKit.m; sourceTree = "<group>"; };
+		129A585F2585E0E400F6D9A4 /* WBONetKitTimeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBONetKitTimeline.h; sourceTree = "<group>"; };
+		129A58602585E0E400F6D9A4 /* WBONetKitTimeline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBONetKitTimeline.m; sourceTree = "<group>"; };
+		129A58632585E46700F6D9A4 /* WBONetKitConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBONetKitConstants.h; sourceTree = "<group>"; };
+		129A58692585F45A00F6D9A4 /* WBOModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOModel.h; sourceTree = "<group>"; };
+		129A586A2585F45A00F6D9A4 /* WBOModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOModel.m; sourceTree = "<group>"; };
+		129A58702586029600F6D9A4 /* WBOTimeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOTimeline.h; sourceTree = "<group>"; };
+		129A58712586029600F6D9A4 /* WBOTimeline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOTimeline.m; sourceTree = "<group>"; };
 		235FA8A3D05C5F0605F545B3 /* Pods_weibo_oc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weibo_oc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		930D27326B2A4DAE3201C040 /* Pods-weibo-oc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo-oc.release.xcconfig"; path = "Target Support Files/Pods-weibo-oc/Pods-weibo-oc.release.xcconfig"; sourceTree = "<group>"; };
 		B0D1F3A94AE60F32B2AF1BEA /* Pods-weibo-oc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo-oc.debug.xcconfig"; path = "Target Support Files/Pods-weibo-oc/Pods-weibo-oc.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,6 +100,7 @@
 		125989122583CFEC00CCFB67 /* weibo-oc */ = {
 			isa = PBXGroup;
 			children = (
+				127910502584FE5B004DE687 /* WeiboAPI */,
 				127910312584B767004DE687 /* Me */,
 				127910292584B72A004DE687 /* Message */,
 				12790FEF25846B3D004DE687 /* Images */,
@@ -120,8 +137,8 @@
 		125989372583D55200CCFB67 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				1259894A2583DD7600CCFB67 /* WBOHomeViewController.h */,
-				1259894B2583DD7600CCFB67 /* WBOHomeViewController.m */,
+				129A58662585F11000F6D9A4 /* Controllers */,
+				129A58652585F10800F6D9A4 /* Models */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -129,6 +146,7 @@
 		125989392583DC6500CCFB67 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				129A58592585CAA400F6D9A4 /* WBONetKit */,
 				125989492583DD4700CCFB67 /* PrefixHeader.pch */,
 				1259894F2583DDB000CCFB67 /* WBOUtils.h */,
 				125989502583DDB000CCFB67 /* WBOUtils.m */,
@@ -159,10 +177,67 @@
 		127910312584B767004DE687 /* Me */ = {
 			isa = PBXGroup;
 			children = (
+				129A58682585F41C00F6D9A4 /* Controllers */,
+				129A58672585F41600F6D9A4 /* Models */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		127910502584FE5B004DE687 /* WeiboAPI */ = {
+			isa = PBXGroup;
+			children = (
+				127910512584FE89004DE687 /* WBOWeiboClient.h */,
+				127910522584FE89004DE687 /* WBOWeiboClient.m */,
+			);
+			path = WeiboAPI;
+			sourceTree = "<group>";
+		};
+		129A58592585CAA400F6D9A4 /* WBONetKit */ = {
+			isa = PBXGroup;
+			children = (
+				129A585A2585CAD900F6D9A4 /* WBONetKit.h */,
+				129A585B2585CAD900F6D9A4 /* WBONetKit.m */,
+				129A585F2585E0E400F6D9A4 /* WBONetKitTimeline.h */,
+				129A58602585E0E400F6D9A4 /* WBONetKitTimeline.m */,
+				129A58632585E46700F6D9A4 /* WBONetKitConstants.h */,
+				129A58692585F45A00F6D9A4 /* WBOModel.h */,
+				129A586A2585F45A00F6D9A4 /* WBOModel.m */,
+			);
+			path = WBONetKit;
+			sourceTree = "<group>";
+		};
+		129A58652585F10800F6D9A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				129A58702586029600F6D9A4 /* WBOTimeline.h */,
+				129A58712586029600F6D9A4 /* WBOTimeline.m */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		129A58662585F11000F6D9A4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1259894A2583DD7600CCFB67 /* WBOHomeViewController.h */,
+				1259894B2583DD7600CCFB67 /* WBOHomeViewController.m */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		129A58672585F41600F6D9A4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		129A58682585F41C00F6D9A4 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
 				127910322584B777004DE687 /* WBOMeViewController.h */,
 				127910332584B777004DE687 /* WBOMeViewController.m */,
 			);
-			path = Me;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		ABAF15FDC1F5FC976435249C /* Pods */ = {
@@ -194,7 +269,6 @@
 				1259890D2583CFEC00CCFB67 /* Frameworks */,
 				1259890E2583CFEC00CCFB67 /* Resources */,
 				7EAC6A5B80438620AED68220 /* [CP] Embed Pods Frameworks */,
-				E3BECF3D5C437A28DF82D362 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,23 +367,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E3BECF3D5C437A28DF82D362 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-weibo-oc/Pods-weibo-oc-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-weibo-oc/Pods-weibo-oc-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-weibo-oc/Pods-weibo-oc-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -317,13 +374,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				127910532584FE89004DE687 /* WBOWeiboClient.m in Sources */,
+				129A586B2585F45A00F6D9A4 /* WBOModel.m in Sources */,
+				129A585C2585CAD900F6D9A4 /* WBONetKit.m in Sources */,
 				125989152583CFEC00CCFB67 /* AppDelegate.m in Sources */,
 				12790FED25846B11004DE687 /* WBOAuthorizationViewController.m in Sources */,
 				125989262583CFEE00CCFB67 /* main.m in Sources */,
 				1279102C2584B741004DE687 /* WBOMessageViewController.m in Sources */,
 				125989512583DDB000CCFB67 /* WBOUtils.m in Sources */,
 				1259894C2583DD7600CCFB67 /* WBOHomeViewController.m in Sources */,
+				129A58612585E0E400F6D9A4 /* WBONetKitTimeline.m in Sources */,
 				127910342584B777004DE687 /* WBOMeViewController.m in Sources */,
+				129A58722586029600F6D9A4 /* WBOTimeline.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
