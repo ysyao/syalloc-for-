@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (void)setTabBarItem:(UIViewController *)viewController WithImageName:(NSString *)imageName title:(NSString *)title;
 
++ (UINavigationController *)newNavigationControlerBy:(Class)clazz;
 @end
 
 NS_ASSUME_NONNULL_END

@@ -11,11 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WBOTimeline : WBOModel
 
-@property (nonatomic, copy) NSString *idStr;
+@property NSString *idStr;
 
-@property (nonatomic, copy) NSString *mid;
+@property NSString *mid;
 
-@property (nonatomic, copy) NSString *text;
+@property NSString *text;
 
 
 @end

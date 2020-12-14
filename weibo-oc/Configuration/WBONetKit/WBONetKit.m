@@ -56,10 +56,21 @@
     return [mutiReq copy];
 }
 
-- (void)composeAndSendRequest:(NSString *)urlStr parameters:(NSDictionary *)parameters class:(Class)clazz completionHandler:(void (^)(NSURLResponse * _Nullable response, WBOModel * _Nullable model, NSError * _Nullable error))completionHandler {
+- (void)composeAndSendRequestWithMethod:(ReqMethod)method urlStr:(NSString *)urlStr parameters:(NSDictionary *)parameters clazz:(Class)clazz completionHandler:(void (^)(NSURLResponse * _Nullable response, WBOModel * _Nullable model, NSError * _Nullable error))completionHandler {
     
     NSError *error;
-    NSURLRequest *req = [self getReq:urlStr parameters:parameters error:&error];
+    NSURLRequest *req;
+    
+    switch (method) {
+        case GET:
+            req = [self getReq:urlStr parameters:parameters error:&error];
+            break;
+        case POST:
+            req = [self postReq:urlStr parameters:parameters error:&error];
+        default:
+            req = [self getReq:urlStr parameters:parameters error:&error];
+            break;
+    }
     
     if (error) {
         completionHandler(nil, nil, error);

@@ -9,5 +9,10 @@
 
 @implementation WBOTimeline
 
++ (NSDictionary *)modelCustomPropertyMapper {
+    return @{
+        
+    };
+}
 
 @end

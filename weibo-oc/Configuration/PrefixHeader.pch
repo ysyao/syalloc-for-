@@ -13,6 +13,8 @@
 #define weakSelf() __weak typeof(self) weakSelf = self
 
 #define MainThemeColor [UIColor blackColor]
+// #FF8300
+#define WBOThemeColor [UIColor colorWithRed:255.0 green:131 blue:0 alpha:1]
 
 #ifdef DEBUG
 

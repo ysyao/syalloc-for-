@@ -27,7 +27,7 @@
     
     NSString *urlStr = [NSString stringWithFormat:@"%@%@", SINA_HOST, PUBLIC_TIMELINE];
     
-    [self composeAndSendRequest:urlStr parameters:parameters class:clazz completionHandler:completionHandler];
+    [self composeAndSendRequestWithMethod:GET urlStr:urlStr parameters:parameters clazz:clazz completionHandler:completionHandler];
 }
 
 @end

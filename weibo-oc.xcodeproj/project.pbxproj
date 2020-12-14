@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		123FA27A25874A8B0089CB56 /* more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123FA27925874A8B0089CB56 /* more@3x.png */; };
+		123FA28325876DD70089CB56 /* redpacket@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123FA28225876DD70089CB56 /* redpacket@3x.png */; };
 		125989152583CFEC00CCFB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125989142583CFEC00CCFB67 /* AppDelegate.m */; };
 		125989202583CFEE00CCFB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1259891F2583CFEE00CCFB67 /* Assets.xcassets */; };
 		125989232583CFEE00CCFB67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125989212583CFEE00CCFB67 /* LaunchScreen.storyboard */; };
@@ -14,13 +16,24 @@
 		1259894C2583DD7600CCFB67 /* WBOHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1259894B2583DD7600CCFB67 /* WBOHomeViewController.m */; };
 		125989512583DDB000CCFB67 /* WBOUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 125989502583DDB000CCFB67 /* WBOUtils.m */; };
 		12790FED25846B11004DE687 /* WBOAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12790FEC25846B11004DE687 /* WBOAuthorizationViewController.m */; };
-		127910232584B3A8004DE687 /* timeline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1279101F2584B3A8004DE687 /* timeline@3x.png */; };
 		127910242584B3A8004DE687 /* me@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 127910202584B3A8004DE687 /* me@3x.png */; };
 		127910252584B3A8004DE687 /* public@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 127910212584B3A8004DE687 /* public@3x.png */; };
-		127910262584B3A8004DE687 /* message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 127910222584B3A8004DE687 /* message@3x.png */; };
 		1279102C2584B741004DE687 /* WBOMessageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1279102B2584B741004DE687 /* WBOMessageViewController.m */; };
 		127910342584B777004DE687 /* WBOMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 127910332584B777004DE687 /* WBOMeViewController.m */; };
 		127910532584FE89004DE687 /* WBOWeiboClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 127910522584FE89004DE687 /* WBOWeiboClient.m */; };
+		1283CF4C2587A81300910140 /* timeline_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF4A2587A81300910140 /* timeline_selected@3x.png */; };
+		1283CF4D2587A81300910140 /* timeline@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF4B2587A81300910140 /* timeline@3x.png */; };
+		1283CF512587A8E500910140 /* video_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF4F2587A8E500910140 /* video_selected@3x.png */; };
+		1283CF522587A8E500910140 /* video@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF502587A8E500910140 /* video@3x.png */; };
+		1283CF562587A98400910140 /* search@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF542587A98400910140 /* search@3x.png */; };
+		1283CF572587A98400910140 /* search_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF552587A98400910140 /* search_selected@3x.png */; };
+		1283CF5D2587AA9800910140 /* photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF5A2587AA9800910140 /* photo@3x.png */; };
+		1283CF5E2587AA9800910140 /* message_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF5B2587AA9800910140 /* message_selected@3x.png */; };
+		1283CF5F2587AA9800910140 /* message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF5C2587AA9800910140 /* message@3x.png */; };
+		1283CF622587AAD300910140 /* photo_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF612587AAD300910140 /* photo_selected@3x.png */; };
+		1283CF6E2587B23F00910140 /* WBOHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1283CF6D2587B23F00910140 /* WBOHomeTitleView.m */; };
+		1283CF732587B64400910140 /* WBOHomeTitleUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1283CF722587B64400910140 /* WBOHomeTitleUIButton.m */; };
+		1283CF762587C50600910140 /* me_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF752587C50600910140 /* me_selected@3x.png */; };
 		129A585C2585CAD900F6D9A4 /* WBONetKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A585B2585CAD900F6D9A4 /* WBONetKit.m */; };
 		129A58612585E0E400F6D9A4 /* WBONetKitTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A58602585E0E400F6D9A4 /* WBONetKitTimeline.m */; };
 		129A586B2585F45A00F6D9A4 /* WBOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A586A2585F45A00F6D9A4 /* WBOModel.m */; };
@@ -29,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		123FA27925874A8B0089CB56 /* more@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@3x.png"; sourceTree = "<group>"; };
+		123FA28225876DD70089CB56 /* redpacket@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redpacket@3x.png"; sourceTree = "<group>"; };
 		125989102583CFEC00CCFB67 /* weibo-oc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo-oc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		125989132583CFEC00CCFB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		125989142583CFEC00CCFB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -43,16 +58,29 @@
 		125989502583DDB000CCFB67 /* WBOUtils.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOUtils.m; sourceTree = "<group>"; };
 		12790FEB25846B11004DE687 /* WBOAuthorizationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOAuthorizationViewController.h; sourceTree = "<group>"; };
 		12790FEC25846B11004DE687 /* WBOAuthorizationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOAuthorizationViewController.m; sourceTree = "<group>"; };
-		1279101F2584B3A8004DE687 /* timeline@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline@3x.png"; sourceTree = "<group>"; };
 		127910202584B3A8004DE687 /* me@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me@3x.png"; sourceTree = "<group>"; };
 		127910212584B3A8004DE687 /* public@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "public@3x.png"; sourceTree = "<group>"; };
-		127910222584B3A8004DE687 /* message@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message@3x.png"; sourceTree = "<group>"; };
 		1279102A2584B741004DE687 /* WBOMessageViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOMessageViewController.h; sourceTree = "<group>"; };
 		1279102B2584B741004DE687 /* WBOMessageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOMessageViewController.m; sourceTree = "<group>"; };
 		127910322584B777004DE687 /* WBOMeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOMeViewController.h; sourceTree = "<group>"; };
 		127910332584B777004DE687 /* WBOMeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOMeViewController.m; sourceTree = "<group>"; };
 		127910512584FE89004DE687 /* WBOWeiboClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOWeiboClient.h; sourceTree = "<group>"; };
 		127910522584FE89004DE687 /* WBOWeiboClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOWeiboClient.m; sourceTree = "<group>"; };
+		1283CF4A2587A81300910140 /* timeline_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline_selected@3x.png"; sourceTree = "<group>"; };
+		1283CF4B2587A81300910140 /* timeline@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "timeline@3x.png"; sourceTree = "<group>"; };
+		1283CF4F2587A8E500910140 /* video_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video_selected@3x.png"; sourceTree = "<group>"; };
+		1283CF502587A8E500910140 /* video@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video@3x.png"; sourceTree = "<group>"; };
+		1283CF542587A98400910140 /* search@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search@3x.png"; sourceTree = "<group>"; };
+		1283CF552587A98400910140 /* search_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_selected@3x.png"; sourceTree = "<group>"; };
+		1283CF5A2587AA9800910140 /* photo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo@3x.png"; sourceTree = "<group>"; };
+		1283CF5B2587AA9800910140 /* message_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message_selected@3x.png"; sourceTree = "<group>"; };
+		1283CF5C2587AA9800910140 /* message@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "message@3x.png"; path = "../../../../../../Downloads/message@3x.png"; sourceTree = "<group>"; };
+		1283CF612587AAD300910140 /* photo_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_selected@3x.png"; sourceTree = "<group>"; };
+		1283CF6C2587B23F00910140 /* WBOHomeTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOHomeTitleView.h; sourceTree = "<group>"; };
+		1283CF6D2587B23F00910140 /* WBOHomeTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOHomeTitleView.m; sourceTree = "<group>"; };
+		1283CF712587B64400910140 /* WBOHomeTitleUIButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOHomeTitleUIButton.h; sourceTree = "<group>"; };
+		1283CF722587B64400910140 /* WBOHomeTitleUIButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOHomeTitleUIButton.m; sourceTree = "<group>"; };
+		1283CF752587C50600910140 /* me_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_selected@3x.png"; sourceTree = "<group>"; };
 		129A585A2585CAD900F6D9A4 /* WBONetKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBONetKit.h; sourceTree = "<group>"; };
 		129A585B2585CAD900F6D9A4 /* WBONetKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBONetKit.m; sourceTree = "<group>"; };
 		129A585F2585E0E400F6D9A4 /* WBONetKitTimeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBONetKitTimeline.h; sourceTree = "<group>"; };
@@ -137,6 +165,7 @@
 		125989372583D55200CCFB67 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				1283CF6B2587B22200910140 /* Views */,
 				129A58662585F11000F6D9A4 /* Controllers */,
 				129A58652585F10800F6D9A4 /* Models */,
 			);
@@ -157,10 +186,21 @@
 		12790FEF25846B3D004DE687 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				1283CF5B2587AA9800910140 /* message_selected@3x.png */,
+				1283CF5C2587AA9800910140 /* message@3x.png */,
+				1283CF612587AAD300910140 /* photo_selected@3x.png */,
+				1283CF5A2587AA9800910140 /* photo@3x.png */,
+				1283CF552587A98400910140 /* search_selected@3x.png */,
+				1283CF542587A98400910140 /* search@3x.png */,
+				1283CF4F2587A8E500910140 /* video_selected@3x.png */,
+				1283CF502587A8E500910140 /* video@3x.png */,
+				123FA27925874A8B0089CB56 /* more@3x.png */,
+				1283CF4A2587A81300910140 /* timeline_selected@3x.png */,
+				1283CF4B2587A81300910140 /* timeline@3x.png */,
 				127910202584B3A8004DE687 /* me@3x.png */,
-				127910222584B3A8004DE687 /* message@3x.png */,
+				1283CF752587C50600910140 /* me_selected@3x.png */,
+				123FA28225876DD70089CB56 /* redpacket@3x.png */,
 				127910212584B3A8004DE687 /* public@3x.png */,
-				1279101F2584B3A8004DE687 /* timeline@3x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -190,6 +230,17 @@
 				127910522584FE89004DE687 /* WBOWeiboClient.m */,
 			);
 			path = WeiboAPI;
+			sourceTree = "<group>";
+		};
+		1283CF6B2587B22200910140 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				1283CF6C2587B23F00910140 /* WBOHomeTitleView.h */,
+				1283CF6D2587B23F00910140 /* WBOHomeTitleView.m */,
+				1283CF712587B64400910140 /* WBOHomeTitleUIButton.h */,
+				1283CF722587B64400910140 /* WBOHomeTitleUIButton.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		129A58592585CAA400F6D9A4 /* WBONetKit */ = {
@@ -316,12 +367,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1283CF5D2587AA9800910140 /* photo@3x.png in Resources */,
+				1283CF5F2587AA9800910140 /* message@3x.png in Resources */,
+				1283CF562587A98400910140 /* search@3x.png in Resources */,
+				1283CF4D2587A81300910140 /* timeline@3x.png in Resources */,
+				1283CF512587A8E500910140 /* video_selected@3x.png in Resources */,
 				125989232583CFEE00CCFB67 /* LaunchScreen.storyboard in Resources */,
+				123FA27A25874A8B0089CB56 /* more@3x.png in Resources */,
+				1283CF522587A8E500910140 /* video@3x.png in Resources */,
 				127910252584B3A8004DE687 /* public@3x.png in Resources */,
+				1283CF572587A98400910140 /* search_selected@3x.png in Resources */,
 				127910242584B3A8004DE687 /* me@3x.png in Resources */,
 				125989202583CFEE00CCFB67 /* Assets.xcassets in Resources */,
-				127910232584B3A8004DE687 /* timeline@3x.png in Resources */,
-				127910262584B3A8004DE687 /* message@3x.png in Resources */,
+				1283CF762587C50600910140 /* me_selected@3x.png in Resources */,
+				123FA28325876DD70089CB56 /* redpacket@3x.png in Resources */,
+				1283CF622587AAD300910140 /* photo_selected@3x.png in Resources */,
+				1283CF4C2587A81300910140 /* timeline_selected@3x.png in Resources */,
+				1283CF5E2587AA9800910140 /* message_selected@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +436,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1283CF6E2587B23F00910140 /* WBOHomeTitleView.m in Sources */,
 				127910532584FE89004DE687 /* WBOWeiboClient.m in Sources */,
 				129A586B2585F45A00F6D9A4 /* WBOModel.m in Sources */,
 				129A585C2585CAD900F6D9A4 /* WBONetKit.m in Sources */,
@@ -385,6 +448,7 @@
 				1259894C2583DD7600CCFB67 /* WBOHomeViewController.m in Sources */,
 				129A58612585E0E400F6D9A4 /* WBONetKitTimeline.m in Sources */,
 				127910342584B777004DE687 /* WBOMeViewController.m in Sources */,
+				1283CF732587B64400910140 /* WBOHomeTitleUIButton.m in Sources */,
 				129A58722586029600F6D9A4 /* WBOTimeline.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

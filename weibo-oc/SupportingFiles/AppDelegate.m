@@ -25,18 +25,21 @@
     
     UITabBarController *tabVc = [[UITabBarController alloc] init];
     
-//    tabVc.tabBar.tintColor = MainThemeColor;
+    tabVc.tabBar.tintColor = UIColor.blackColor;
+    UINavigationController *timeLineVc = [WBOUtils newNavigationControlerBy:[WBOHomeViewController class]];
+    UINavigationController *videoVc = [WBOUtils newNavigationControlerBy:[WBOMessageViewController class]];
+    UINavigationController *findVc = [WBOUtils newNavigationControlerBy:[WBOMessageViewController class]];
+    UINavigationController *msgVc = [WBOUtils newNavigationControlerBy:[WBOMessageViewController class]];
+    UINavigationController *meVc = [WBOUtils newNavigationControlerBy:[WBOMeViewController class]];
     
-    WBOHomeViewController *timeLineVc = [[WBOHomeViewController alloc] init];
-    WBOMessageViewController *msgVc = [[WBOMessageViewController alloc] init];
-    WBOMeViewController *meVc = [[WBOMeViewController alloc] init];
-    
-    [WBOUtils setTabBarItem:timeLineVc WithImageName:@"timeline" title:@"信息流"];
+    [WBOUtils setTabBarItem:timeLineVc WithImageName:@"timeline" title:@"微博"];
+    [WBOUtils setTabBarItem:videoVc WithImageName:@"video" title:@"视频"];
+    [WBOUtils setTabBarItem:findVc WithImageName:@"search" title:@"发现"];
     [WBOUtils setTabBarItem:msgVc WithImageName:@"message" title:@"私信"];
     [WBOUtils setTabBarItem:meVc WithImageName:@"me" title:@"我"];
     
-    tabVc.viewControllers = @[timeLineVc, msgVc, meVc];
-    
+    tabVc.viewControllers = @[timeLineVc, videoVc, findVc, msgVc, meVc];
+
     self.window.rootViewController = tabVc;
     [self.window makeKeyAndVisible];
     
