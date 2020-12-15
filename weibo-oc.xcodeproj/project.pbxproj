@@ -11,7 +11,6 @@
 		123FA28325876DD70089CB56 /* redpacket@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123FA28225876DD70089CB56 /* redpacket@3x.png */; };
 		125989152583CFEC00CCFB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125989142583CFEC00CCFB67 /* AppDelegate.m */; };
 		125989202583CFEE00CCFB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1259891F2583CFEE00CCFB67 /* Assets.xcassets */; };
-		125989232583CFEE00CCFB67 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 125989212583CFEE00CCFB67 /* LaunchScreen.storyboard */; };
 		125989262583CFEE00CCFB67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 125989252583CFEE00CCFB67 /* main.m */; };
 		1259894C2583DD7600CCFB67 /* WBOHomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1259894B2583DD7600CCFB67 /* WBOHomeViewController.m */; };
 		125989512583DDB000CCFB67 /* WBOUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 125989502583DDB000CCFB67 /* WBOUtils.m */; };
@@ -38,6 +37,12 @@
 		129A58612585E0E400F6D9A4 /* WBONetKitTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A58602585E0E400F6D9A4 /* WBONetKitTimeline.m */; };
 		129A586B2585F45A00F6D9A4 /* WBOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A586A2585F45A00F6D9A4 /* WBOModel.m */; };
 		129A58722586029600F6D9A4 /* WBOTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A58712586029600F6D9A4 /* WBOTimeline.m */; };
+		12ADE2782588523A00DE9950 /* screen_bg1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 12ADE2772588523A00DE9950 /* screen_bg1.gif */; };
+		12ADE27D2588526300DE9950 /* WBOLaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12ADE27C2588526300DE9950 /* WBOLaunchScreenViewController.m */; };
+		12ADE283258863E000DE9950 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12ADE282258863E000DE9950 /* LaunchScreen.xib */; };
+		12ADE286258868A700DE9950 /* screen_bg2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 12ADE285258868A600DE9950 /* screen_bg2.gif */; };
+		12ADE28E2588997D00DE9950 /* launch_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 12ADE28D2588997D00DE9950 /* launch_bg.jpg */; };
+		12F033542588EF63005BD5FB /* WBOTitleItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 12F033532588EF63005BD5FB /* WBOTitleItem.m */; };
 		496547398F86ACD56C7EC289 /* Pods_weibo_oc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 235FA8A3D05C5F0605F545B3 /* Pods_weibo_oc.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +53,6 @@
 		125989132583CFEC00CCFB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		125989142583CFEC00CCFB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1259891F2583CFEE00CCFB67 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		125989222583CFEE00CCFB67 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		125989242583CFEE00CCFB67 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		125989252583CFEE00CCFB67 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		125989492583DD4700CCFB67 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
@@ -90,6 +94,14 @@
 		129A586A2585F45A00F6D9A4 /* WBOModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOModel.m; sourceTree = "<group>"; };
 		129A58702586029600F6D9A4 /* WBOTimeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOTimeline.h; sourceTree = "<group>"; };
 		129A58712586029600F6D9A4 /* WBOTimeline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOTimeline.m; sourceTree = "<group>"; };
+		12ADE2772588523A00DE9950 /* screen_bg1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = screen_bg1.gif; sourceTree = "<group>"; };
+		12ADE27B2588526300DE9950 /* WBOLaunchScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOLaunchScreenViewController.h; sourceTree = "<group>"; };
+		12ADE27C2588526300DE9950 /* WBOLaunchScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOLaunchScreenViewController.m; sourceTree = "<group>"; };
+		12ADE282258863E000DE9950 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		12ADE285258868A600DE9950 /* screen_bg2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = screen_bg2.gif; sourceTree = "<group>"; };
+		12ADE28D2588997D00DE9950 /* launch_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = launch_bg.jpg; sourceTree = "<group>"; };
+		12F033522588EF63005BD5FB /* WBOTitleItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOTitleItem.h; sourceTree = "<group>"; };
+		12F033532588EF63005BD5FB /* WBOTitleItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOTitleItem.m; sourceTree = "<group>"; };
 		235FA8A3D05C5F0605F545B3 /* Pods_weibo_oc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weibo_oc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		930D27326B2A4DAE3201C040 /* Pods-weibo-oc.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo-oc.release.xcconfig"; path = "Target Support Files/Pods-weibo-oc/Pods-weibo-oc.release.xcconfig"; sourceTree = "<group>"; };
 		B0D1F3A94AE60F32B2AF1BEA /* Pods-weibo-oc.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo-oc.debug.xcconfig"; path = "Target Support Files/Pods-weibo-oc/Pods-weibo-oc.debug.xcconfig"; sourceTree = "<group>"; };
@@ -128,6 +140,7 @@
 		125989122583CFEC00CCFB67 /* weibo-oc */ = {
 			isa = PBXGroup;
 			children = (
+				12ADE27A2588523E00DE9950 /* LaunchScreen */,
 				127910502584FE5B004DE687 /* WeiboAPI */,
 				127910312584B767004DE687 /* Me */,
 				127910292584B72A004DE687 /* Message */,
@@ -147,7 +160,6 @@
 				125989132583CFEC00CCFB67 /* AppDelegate.h */,
 				125989142583CFEC00CCFB67 /* AppDelegate.m */,
 				1259891F2583CFEE00CCFB67 /* Assets.xcassets */,
-				125989212583CFEE00CCFB67 /* LaunchScreen.storyboard */,
 				125989252583CFEE00CCFB67 /* main.m */,
 			);
 			path = SupportingFiles;
@@ -186,6 +198,7 @@
 		12790FEF25846B3D004DE687 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				12ADE28D2588997D00DE9950 /* launch_bg.jpg */,
 				1283CF5B2587AA9800910140 /* message_selected@3x.png */,
 				1283CF5C2587AA9800910140 /* message@3x.png */,
 				1283CF612587AAD300910140 /* photo_selected@3x.png */,
@@ -239,6 +252,8 @@
 				1283CF6D2587B23F00910140 /* WBOHomeTitleView.m */,
 				1283CF712587B64400910140 /* WBOHomeTitleUIButton.h */,
 				1283CF722587B64400910140 /* WBOHomeTitleUIButton.m */,
+				12F033522588EF63005BD5FB /* WBOTitleItem.h */,
+				12F033532588EF63005BD5FB /* WBOTitleItem.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -289,6 +304,18 @@
 				127910332584B777004DE687 /* WBOMeViewController.m */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		12ADE27A2588523E00DE9950 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				12ADE27B2588526300DE9950 /* WBOLaunchScreenViewController.h */,
+				12ADE27C2588526300DE9950 /* WBOLaunchScreenViewController.m */,
+				12ADE2772588523A00DE9950 /* screen_bg1.gif */,
+				12ADE285258868A600DE9950 /* screen_bg2.gif */,
+				12ADE282258863E000DE9950 /* LaunchScreen.xib */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		ABAF15FDC1F5FC976435249C /* Pods */ = {
@@ -370,9 +397,9 @@
 				1283CF5D2587AA9800910140 /* photo@3x.png in Resources */,
 				1283CF5F2587AA9800910140 /* message@3x.png in Resources */,
 				1283CF562587A98400910140 /* search@3x.png in Resources */,
+				12ADE28E2588997D00DE9950 /* launch_bg.jpg in Resources */,
 				1283CF4D2587A81300910140 /* timeline@3x.png in Resources */,
 				1283CF512587A8E500910140 /* video_selected@3x.png in Resources */,
-				125989232583CFEE00CCFB67 /* LaunchScreen.storyboard in Resources */,
 				123FA27A25874A8B0089CB56 /* more@3x.png in Resources */,
 				1283CF522587A8E500910140 /* video@3x.png in Resources */,
 				127910252584B3A8004DE687 /* public@3x.png in Resources */,
@@ -383,7 +410,10 @@
 				123FA28325876DD70089CB56 /* redpacket@3x.png in Resources */,
 				1283CF622587AAD300910140 /* photo_selected@3x.png in Resources */,
 				1283CF4C2587A81300910140 /* timeline_selected@3x.png in Resources */,
+				12ADE286258868A700DE9950 /* screen_bg2.gif in Resources */,
 				1283CF5E2587AA9800910140 /* message_selected@3x.png in Resources */,
+				12ADE283258863E000DE9950 /* LaunchScreen.xib in Resources */,
+				12ADE2782588523A00DE9950 /* screen_bg1.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +468,7 @@
 			files = (
 				1283CF6E2587B23F00910140 /* WBOHomeTitleView.m in Sources */,
 				127910532584FE89004DE687 /* WBOWeiboClient.m in Sources */,
+				12F033542588EF63005BD5FB /* WBOTitleItem.m in Sources */,
 				129A586B2585F45A00F6D9A4 /* WBOModel.m in Sources */,
 				129A585C2585CAD900F6D9A4 /* WBONetKit.m in Sources */,
 				125989152583CFEC00CCFB67 /* AppDelegate.m in Sources */,
@@ -450,21 +481,11 @@
 				127910342584B777004DE687 /* WBOMeViewController.m in Sources */,
 				1283CF732587B64400910140 /* WBOHomeTitleUIButton.m in Sources */,
 				129A58722586029600F6D9A4 /* WBOTimeline.m in Sources */,
+				12ADE27D2588526300DE9950 /* WBOLaunchScreenViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		125989212583CFEE00CCFB67 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				125989222583CFEE00CCFB67 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		125989272583CFEE00CCFB67 /* Debug */ = {

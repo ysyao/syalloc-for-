@@ -12,6 +12,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface WBOUtils : NSObject
 
++ (UIWindow *)findKeyWindow:(NSArray<UIWindow *> *)windows;
+
 + (void)setTabBarItem:(UIViewController *)viewController WithImageName:(NSString *)imageName title:(NSString *)title;
 
 + (UINavigationController *)newNavigationControlerBy:(Class)clazz;

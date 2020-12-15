@@ -18,6 +18,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:NSStringFromSelector(@selector(tabSelected))];
+}
+
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
@@ -30,7 +35,7 @@
             /// [headingButton setTitleColor:[UIColor colorWithRed:36/255.0 green:71/255.0 blue:113/255.0 alpha:1.0] forState:UIControlStateNormal];
             [self setTitleColor:UIColor.blackColor forState:UIControlStateNormal];
         } else {
-            self.titleLabel.font = [UIFont systemFontOfSize:17];
+            self.titleLabel.font = [UIFont systemFontOfSize:18];
             [self setTitleColor:UIColor.grayColor forState:UIControlStateNormal];
         }
     }

@@ -6,9 +6,7 @@
 //
 
 #import "AppDelegate.h"
-#import "WBOHomeViewController.h"
-#import "WBOMessageViewController.h"
-#import "WBOMeViewController.h"
+#import "WBOLaunchScreenViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,28 +17,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+
+    /// https://developer.apple.com/documentation/xcode/improving_your_app_s_performance/reducing_your_app_s_launch_time
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = UIColor.whiteColor;
     
-    UITabBarController *tabVc = [[UITabBarController alloc] init];
-    
-    tabVc.tabBar.tintColor = UIColor.blackColor;
-    UINavigationController *timeLineVc = [WBOUtils newNavigationControlerBy:[WBOHomeViewController class]];
-    UINavigationController *videoVc = [WBOUtils newNavigationControlerBy:[WBOMessageViewController class]];
-    UINavigationController *findVc = [WBOUtils newNavigationControlerBy:[WBOMessageViewController class]];
-    UINavigationController *msgVc = [WBOUtils newNavigationControlerBy:[WBOMessageViewController class]];
-    UINavigationController *meVc = [WBOUtils newNavigationControlerBy:[WBOMeViewController class]];
-    
-    [WBOUtils setTabBarItem:timeLineVc WithImageName:@"timeline" title:@"微博"];
-    [WBOUtils setTabBarItem:videoVc WithImageName:@"video" title:@"视频"];
-    [WBOUtils setTabBarItem:findVc WithImageName:@"search" title:@"发现"];
-    [WBOUtils setTabBarItem:msgVc WithImageName:@"message" title:@"私信"];
-    [WBOUtils setTabBarItem:meVc WithImageName:@"me" title:@"我"];
-    
-    tabVc.viewControllers = @[timeLineVc, videoVc, findVc, msgVc, meVc];
-
-    self.window.rootViewController = tabVc;
+    WBOLaunchScreenViewController *launchVc = [[WBOLaunchScreenViewController alloc] init];
+    self.window.rootViewController = launchVc;
     [self.window makeKeyAndVisible];
     
     return YES;

@@ -9,6 +9,15 @@
 
 @implementation WBOUtils
 
++ (UIWindow *)findKeyWindow:(NSArray<UIWindow *> *)windows {
+    for (UIWindow *win in windows) {
+        if (win.isKeyWindow) {
+            return win;
+        }
+    }
+    return nil;
+}
+
 + (void)setTabBarItem:(UIViewController *)viewController WithImageName:(NSString *)imageName title:(NSString *)title {
     UIImage *img = [UIImage imageNamed:imageName];
     UIImage *selectedImg = [UIImage imageNamed:[NSString stringWithFormat:@"%@_selected", imageName]];

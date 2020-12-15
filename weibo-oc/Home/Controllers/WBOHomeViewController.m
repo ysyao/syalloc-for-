@@ -10,6 +10,7 @@
 #import "WBONetKitTimeline.h"
 #import "WBOTimeline.h"
 #import "WBOHomeTitleView.h"
+#import "WBOTitleItem.h"
 
 @interface WBOHomeViewController ()
 
@@ -39,24 +40,43 @@
     
     UIBarButtonItem *rightMoreItem = [self newUIBarButtonItemWithTarget:self ImageName:@"more" action:@selector(didPressMoreButton:)];
     
-    UIBarButtonItem *fixed = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    UIBarButtonItem *fixed1 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    UIBarButtonItem *fixed2 = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
     
     [leftPhotoItem setTintColor:UIColor.blackColor];
     [rightRedPacketItem setTintColor:UIColor.redColor];
     [rightMoreItem setTintColor:[UIColor orangeColor]];
     
-    self.navigationItem.leftBarButtonItem = leftPhotoItem;
-    self.navigationItem.rightBarButtonItems = @[rightMoreItem, rightRedPacketItem, fixed];
+    self.navigationItem.leftBarButtonItems = @[leftPhotoItem, fixed1];
+    self.navigationItem.rightBarButtonItems = @[rightMoreItem, rightRedPacketItem, fixed2];
     
-    WBOHomeTitleView *tv = [[WBOHomeTitleView alloc] initWithFrame:CGRectMake(0, 0, 200, 44)];
+    WBOHomeTitleView *tv = [[WBOHomeTitleView alloc] initWithFrame:CGRectZero];
+    WBOTitleItem *item1 = [[WBOTitleItem alloc] initWithTitle:@"关注" Block:^(NSString * _Nonnull title, NSUInteger index) {
+        WBOLog(@"guanzu");
+    }];
+    WBOTitleItem *item2 = [[WBOTitleItem alloc] initWithTitle:@"推荐" Block:^(NSString * _Nonnull title, NSUInteger index) {
+        WBOLog(@"tuijian");
+    }];
+    [tv setItems:@[
+        item1,
+        item2
+    ]];
     self.navigationItem.titleView = tv;
     
-//    [tv mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.leading.mas_equalTo(self.navigationItem.titleView.mas_leading);
-//        make.top.mas_equalTo(self.navigationItem.titleView.mas_top);
-//        make.trailing.mas_equalTo(self.navigationItem.titleView.mas_trailing);
-//        make.bottom.mas_equalTo(self.navigationItem.titleView.mas_bottom);
-//    }];
+    /// https://stackoverflow.com/questions/46867592/swift-uitapgesture-on-view-in-a-titleview-not-working
+    /// Swift UITapGesture on view in a titleView not working
+    /// answer:Beginning with iOS 11, views added to toolbars as UIBarButtonItem using UIBarButtonItem(customView:) are now laid out using auto layout. This includes title views added to a UINavigationBar through the navigationItem.titleView property of a UIViewController. You should add sizing constraints on your titleView. For example:
+    /// titleView.widthAnchor.constraint(equalToConstant: 100).isActive = true
+    /// titleView.heightAnchor.constraint(equalToConstant: 40.0).isActive = true
+    
+    /// Otherwise, auto layout will use the intrinsic content size of your title view which is CGSize.zero. Gestures are masked to the bounds of the view they are attached to even if the sub views of that view are not. Because the bounds of titleView without constraints is CGRect.zero it will never fire. Add constraints and it works as expected.
+    
+    /// For more information see the WWDC 2017 session Updating your app for iOS 11.
+    /// 总结：当titleView没有通过autolayout设置大小的时候，autolayout会用intrinsic content size（view最小size），这里默认为CGRectZero，因此不可能有点击事件触发。
+    [tv mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(200);
+        make.height.mas_equalTo(40);
+    }];
     
 }
 
