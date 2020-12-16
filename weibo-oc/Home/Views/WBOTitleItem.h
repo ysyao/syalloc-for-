@@ -13,11 +13,15 @@ typedef void(^WboTitleItemBlock)(NSString *title, NSUInteger index);
 
 @interface WBOTitleItem : NSObject
 
-- (instancetype)initWithTitle:(NSString *)title Block:(WboTitleItemBlock)block;
+- (instancetype)initWithTitle:(NSString *)title indicatorColor:(UIColor *)indicatorColor viewControllerClass:(Class)viewControllerClass block:(WboTitleItemBlock)block;
 
 @property (nonatomic, copy) NSString *title;
 
-@property (nonatomic, assign) WboTitleItemBlock block;
+@property (nonatomic, copy) WboTitleItemBlock block;
+
+@property (nonatomic, strong) UIColor *indicatorColor;
+
+@property (nonatomic, strong) Class viewControllerClass;
 
 @end
 

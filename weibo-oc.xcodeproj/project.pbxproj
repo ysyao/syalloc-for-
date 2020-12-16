@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		123FA27A25874A8B0089CB56 /* more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123FA27925874A8B0089CB56 /* more@3x.png */; };
 		123FA28325876DD70089CB56 /* redpacket@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123FA28225876DD70089CB56 /* redpacket@3x.png */; };
+		1256C3DE258A476F0042A762 /* WBOHomeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1256C3DD258A476F0042A762 /* WBOHomeScrollView.m */; };
+		1256C3E2258A4D480042A762 /* WBOFollowingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1256C3E1258A4D480042A762 /* WBOFollowingViewController.m */; };
+		1256C3E6258A4D6D0042A762 /* WBORecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1256C3E5258A4D6D0042A762 /* WBORecommendViewController.m */; };
 		125989152583CFEC00CCFB67 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 125989142583CFEC00CCFB67 /* AppDelegate.m */; };
 		125989202583CFEE00CCFB67 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1259891F2583CFEE00CCFB67 /* Assets.xcassets */; };
 		125989262583CFEE00CCFB67 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 125989252583CFEE00CCFB67 /* main.m */; };
@@ -37,7 +40,6 @@
 		129A58612585E0E400F6D9A4 /* WBONetKitTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A58602585E0E400F6D9A4 /* WBONetKitTimeline.m */; };
 		129A586B2585F45A00F6D9A4 /* WBOModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A586A2585F45A00F6D9A4 /* WBOModel.m */; };
 		129A58722586029600F6D9A4 /* WBOTimeline.m in Sources */ = {isa = PBXBuildFile; fileRef = 129A58712586029600F6D9A4 /* WBOTimeline.m */; };
-		12ADE2782588523A00DE9950 /* screen_bg1.gif in Resources */ = {isa = PBXBuildFile; fileRef = 12ADE2772588523A00DE9950 /* screen_bg1.gif */; };
 		12ADE27D2588526300DE9950 /* WBOLaunchScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 12ADE27C2588526300DE9950 /* WBOLaunchScreenViewController.m */; };
 		12ADE283258863E000DE9950 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12ADE282258863E000DE9950 /* LaunchScreen.xib */; };
 		12ADE286258868A700DE9950 /* screen_bg2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 12ADE285258868A600DE9950 /* screen_bg2.gif */; };
@@ -49,6 +51,12 @@
 /* Begin PBXFileReference section */
 		123FA27925874A8B0089CB56 /* more@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@3x.png"; sourceTree = "<group>"; };
 		123FA28225876DD70089CB56 /* redpacket@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redpacket@3x.png"; sourceTree = "<group>"; };
+		1256C3DC258A476F0042A762 /* WBOHomeScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOHomeScrollView.h; sourceTree = "<group>"; };
+		1256C3DD258A476F0042A762 /* WBOHomeScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOHomeScrollView.m; sourceTree = "<group>"; };
+		1256C3E0258A4D480042A762 /* WBOFollowingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOFollowingViewController.h; sourceTree = "<group>"; };
+		1256C3E1258A4D480042A762 /* WBOFollowingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOFollowingViewController.m; sourceTree = "<group>"; };
+		1256C3E4258A4D6D0042A762 /* WBORecommendViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBORecommendViewController.h; sourceTree = "<group>"; };
+		1256C3E5258A4D6D0042A762 /* WBORecommendViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBORecommendViewController.m; sourceTree = "<group>"; };
 		125989102583CFEC00CCFB67 /* weibo-oc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo-oc.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		125989132583CFEC00CCFB67 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		125989142583CFEC00CCFB67 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -94,7 +102,6 @@
 		129A586A2585F45A00F6D9A4 /* WBOModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOModel.m; sourceTree = "<group>"; };
 		129A58702586029600F6D9A4 /* WBOTimeline.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOTimeline.h; sourceTree = "<group>"; };
 		129A58712586029600F6D9A4 /* WBOTimeline.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOTimeline.m; sourceTree = "<group>"; };
-		12ADE2772588523A00DE9950 /* screen_bg1.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = screen_bg1.gif; sourceTree = "<group>"; };
 		12ADE27B2588526300DE9950 /* WBOLaunchScreenViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOLaunchScreenViewController.h; sourceTree = "<group>"; };
 		12ADE27C2588526300DE9950 /* WBOLaunchScreenViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOLaunchScreenViewController.m; sourceTree = "<group>"; };
 		12ADE282258863E000DE9950 /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
@@ -198,6 +205,7 @@
 		12790FEF25846B3D004DE687 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				12ADE285258868A600DE9950 /* screen_bg2.gif */,
 				12ADE28D2588997D00DE9950 /* launch_bg.jpg */,
 				1283CF5B2587AA9800910140 /* message_selected@3x.png */,
 				1283CF5C2587AA9800910140 /* message@3x.png */,
@@ -254,6 +262,8 @@
 				1283CF722587B64400910140 /* WBOHomeTitleUIButton.m */,
 				12F033522588EF63005BD5FB /* WBOTitleItem.h */,
 				12F033532588EF63005BD5FB /* WBOTitleItem.m */,
+				1256C3DC258A476F0042A762 /* WBOHomeScrollView.h */,
+				1256C3DD258A476F0042A762 /* WBOHomeScrollView.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +296,10 @@
 			children = (
 				1259894A2583DD7600CCFB67 /* WBOHomeViewController.h */,
 				1259894B2583DD7600CCFB67 /* WBOHomeViewController.m */,
+				1256C3E0258A4D480042A762 /* WBOFollowingViewController.h */,
+				1256C3E1258A4D480042A762 /* WBOFollowingViewController.m */,
+				1256C3E4258A4D6D0042A762 /* WBORecommendViewController.h */,
+				1256C3E5258A4D6D0042A762 /* WBORecommendViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -311,8 +325,6 @@
 			children = (
 				12ADE27B2588526300DE9950 /* WBOLaunchScreenViewController.h */,
 				12ADE27C2588526300DE9950 /* WBOLaunchScreenViewController.m */,
-				12ADE2772588523A00DE9950 /* screen_bg1.gif */,
-				12ADE285258868A600DE9950 /* screen_bg2.gif */,
 				12ADE282258863E000DE9950 /* LaunchScreen.xib */,
 			);
 			path = LaunchScreen;
@@ -413,7 +425,6 @@
 				12ADE286258868A700DE9950 /* screen_bg2.gif in Resources */,
 				1283CF5E2587AA9800910140 /* message_selected@3x.png in Resources */,
 				12ADE283258863E000DE9950 /* LaunchScreen.xib in Resources */,
-				12ADE2782588523A00DE9950 /* screen_bg1.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,9 +478,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1283CF6E2587B23F00910140 /* WBOHomeTitleView.m in Sources */,
+				1256C3DE258A476F0042A762 /* WBOHomeScrollView.m in Sources */,
 				127910532584FE89004DE687 /* WBOWeiboClient.m in Sources */,
 				12F033542588EF63005BD5FB /* WBOTitleItem.m in Sources */,
+				1256C3E6258A4D6D0042A762 /* WBORecommendViewController.m in Sources */,
 				129A586B2585F45A00F6D9A4 /* WBOModel.m in Sources */,
+				1256C3E2258A4D480042A762 /* WBOFollowingViewController.m in Sources */,
 				129A585C2585CAD900F6D9A4 /* WBONetKit.m in Sources */,
 				125989152583CFEC00CCFB67 /* AppDelegate.m in Sources */,
 				12790FED25846B11004DE687 /* WBOAuthorizationViewController.m in Sources */,

@@ -14,6 +14,11 @@
     self = [super init];
     if (self) {
         [self addObserver:self forKeyPath:NSStringFromSelector(@selector(tabSelected)) options:NSKeyValueObservingOptionNew context:nil];
+        
+        /// https://blog.csdn.net/hc3862591/article/details/49682615
+        /// iOS UIButton如何设置字体居中对齐
+        self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        self.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
     }
     return self;
 }

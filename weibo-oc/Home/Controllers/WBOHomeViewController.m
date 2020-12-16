@@ -11,11 +11,18 @@
 #import "WBOTimeline.h"
 #import "WBOHomeTitleView.h"
 #import "WBOTitleItem.h"
+#import "WBOFollowingViewController.h"
+#import "WBORecommendViewController.h"
+#import "WBOHomeScrollView.h"
 
 @interface WBOHomeViewController ()
 
 
 @property (nonatomic, strong) WBONetKitTimeline *netKit;
+
+@property (nonatomic, strong) WBOHomeTitleView *homeTitleView;
+
+@property (nonatomic, strong) WBOHomeScrollView *scrollView;
 
 @end
 
@@ -26,6 +33,7 @@
     
     [self setUpNavigationbar];
     
+    [self setUpViews];
 }
 
 #pragma mark - set up views
@@ -51,16 +59,6 @@
     self.navigationItem.rightBarButtonItems = @[rightMoreItem, rightRedPacketItem, fixed2];
     
     WBOHomeTitleView *tv = [[WBOHomeTitleView alloc] initWithFrame:CGRectZero];
-    WBOTitleItem *item1 = [[WBOTitleItem alloc] initWithTitle:@"关注" Block:^(NSString * _Nonnull title, NSUInteger index) {
-        WBOLog(@"guanzu");
-    }];
-    WBOTitleItem *item2 = [[WBOTitleItem alloc] initWithTitle:@"推荐" Block:^(NSString * _Nonnull title, NSUInteger index) {
-        WBOLog(@"tuijian");
-    }];
-    [tv setItems:@[
-        item1,
-        item2
-    ]];
     self.navigationItem.titleView = tv;
     
     /// https://stackoverflow.com/questions/46867592/swift-uitapgesture-on-view-in-a-titleview-not-working
@@ -78,6 +76,32 @@
         make.height.mas_equalTo(40);
     }];
     
+    weakSelf();
+    WBOTitleItem *item1 = [[WBOTitleItem alloc] initWithTitle:@"关注" indicatorColor:UIColor.orangeColor viewControllerClass:WBOFollowingViewController.class block:^(NSString * _Nonnull title, NSUInteger index) {
+        WBOLog(@"guanzu");
+        [weakSelf.scrollView moveScrollViewPage];
+    }];
+    WBOTitleItem *item2 = [[WBOTitleItem alloc] initWithTitle:@"推荐" indicatorColor:UIColor.redColor viewControllerClass:WBORecommendViewController.class block:^(NSString * _Nonnull title, NSUInteger index) {
+        WBOLog(@"tuijian");
+        [weakSelf.scrollView moveScrollViewPage];
+    }];
+    WBOTitleItem *item3 = [[WBOTitleItem alloc] initWithTitle:@"视频" indicatorColor:UIColor.redColor viewControllerClass:WBOFollowingViewController.class block:^(NSString * _Nonnull title, NSUInteger index) {
+        WBOLog(@"tuijian");
+        [weakSelf.scrollView moveScrollViewPage];
+    }];
+    
+    [tv setItems:@[
+        item1,
+        item2,
+        item3
+    ]];
+    
+    self.homeTitleView = tv;
+    
+}
+
+- (void)setUpViews {
+    self.scrollView = [[WBOHomeScrollView alloc] initWithHomeTitleView:self.homeTitleView parentViewController:self];
 }
 
 - (UIBarButtonItem *)newUIBarButtonItemWithTarget:(id)target ImageName:(NSString *)imageNamed action:(SEL)action {

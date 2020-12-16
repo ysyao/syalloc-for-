@@ -39,16 +39,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "75C5B7E4-DDAF-41D6-BA8D-7DE77E3D5CC4"
+            uuid = "2D09BDB7-FD1F-4627-BCFD-A83918B1EAD4"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "weibo-oc/Configuration/WBOUtils.m"
+            filePath = "weibo-oc/Home/Views/WBOHomeTitleView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "+newNavigationControlerBy:"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "-findItemAndFireBlock:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
