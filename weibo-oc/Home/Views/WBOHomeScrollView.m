@@ -14,6 +14,8 @@
 
 @property (nonatomic, assign) CGFloat oldPositionOffsetX;
 
+@property (nonatomic, strong) NSMutableArray<UIViewController *> *childViewControllers;
+
 
 @end
 
@@ -55,6 +57,9 @@
     /// 添加ui scroll view的子页面
     int i = 0;
     for (WBOTitleItem *item in self.titleView.items) {
+
+        
+        // 根据传递的viewcontroller class新建页面
         if (item.viewControllerClass) {
             /// 增加scrollview中的子viewcontrollers
             /// https://stackoverflow.com/questions/19820939/setting-up-uiscrollview-to-swipe-between-3-view-controllers
@@ -67,6 +72,8 @@
             frame.origin.x = self.parentVc.view.frame.size.width * i;
             vc.view.frame = frame;
             [vc didMoveToParentViewController:self.parentVc];
+            
+            [self.childViewControllers addObject:vc];
             i++;
         }
     }
@@ -84,29 +91,97 @@
 //}
 
 - (void)moveScrollViewPage {
+    
     CGPoint point = CGPointMake(self.titleView.selectedItemIndex * self.parentVc.view.frame.size.width, self.contentOffset.y);
     [self setContentOffset:point animated:YES];
 }
 
-- (void)dealloc
-{
-//    [self.titleView removeObserver:self forKeyPath:NSStringFromSelector(@selector(selectedItemIndex))];
+#pragma mark - getters
+- (NSMutableArray<UIViewController *> *)childViewControllers {
+    if (!_childViewControllers) {
+        _childViewControllers = [[NSMutableArray alloc] init];
+    }
+    return _childViewControllers;
+}
+
+#pragma mark - delegator
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
+    
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
     
-//    CGFloat offset = scrollView.contentOffset.x - self.oldPositionOffsetX;
-//    CGFloat w = self.parentVc.view.frame.size.width;
-//    if (offset >= w) {
-//        self.titleView.selectedItemIndex += 1;
-//        self.oldPositionOffsetX = scrollView.contentOffset.x;
+//    if (!scrollView.isDragging) {
+//        return;
 //    }
-//
-//    else if (offset <= -w) {
-//        self.titleView.selectedItemIndex -= 1;
-//        self.oldPositionOffsetX = scrollView.contentOffset.x;
-//    }
+    // 滑动连带titleview的tab下方动画
+    if (self.titleView.items.count > 1) {
+        CGFloat offset = scrollView.contentOffset.x - self.parentVc.view.frame.size.width * self.titleView.selectedItemIndex;
+        CGFloat screenLength = self.parentVc.view.frame.size.width / 2;
+
+        UIView *container = self.titleView.indicatorStack.arrangedSubviews[self.titleView.selectedItemIndex];
+        UIView *indicator = self.titleView.animateIndicator;
+
+        CGFloat tabMoveLength = container.frame.size.width;
+
+
+        /// 动画：向右滑动动画
+        if (offset > 0) {
+            if (offset <= screenLength) {
+                CGFloat tabOffset = offset / screenLength * tabMoveLength;
+                [indicator mas_updateConstraints:^(MASConstraintMaker *make) {
+
+                    CGFloat w = 40 + tabOffset;
+                    make.width.mas_equalTo(w);
+
+                    CGFloat centerXOffset = w / 2;
+                    make.centerX.mas_equalTo(container.mas_centerX).with.offset(centerXOffset - 20);
+                }];
+                // 设置渐变色
+//                CAGradientLayer *gradient = [CAGradientLayer layer];
+//                gradient.frame = indicator.bounds;
+//                gradient.colors = @[
+//                    (id)self.titleView.items[self.titleView.selectedItemIndex].indicatorColor.CGColor,
+//                    (id)self.titleView.items[self.titleView.selectedItemIndex + 1].indicatorColor.CGColor
+//                ];
+//                gradient.startPoint = CGPointMake(0, 0);
+//                gradient.endPoint = CGPointMake(0, 1);
+//                
+//                [indicator.layer addSublayer:gradient];
+            } else {
+                CGFloat originCenterOffset = container.frame.size.width / 2;
+                CGFloat mostLength = (container.frame.size.width + 40);
+                CGFloat tabOffset = (offset - screenLength) /  screenLength * tabMoveLength;
+                [indicator mas_updateConstraints:^(MASConstraintMaker *make) {
+
+                    CGFloat w = mostLength - tabOffset;
+                    make.width.mas_equalTo(w);
+
+                    CGFloat margin = (container.frame.size.width - 40) / 2;
+                    CGFloat centerXOffset =  w / 2 - (margin + 40 - tabOffset);
+
+                    make.centerX.mas_equalTo(container.mas_centerX).with.offset(centerXOffset + originCenterOffset);
+                }];
+            }
+        }
+        
+    }
+    
+    
+    // 滑动连带titleview的tab变动
+    if (self.childViewControllers && self.childViewControllers.count > 0) {
+        for (UIViewController *vc in self.childViewControllers) {
+            if (scrollView.contentOffset.x == vc.view.frame.origin.x) {
+                self.titleView.selectedItemIndex = [self.childViewControllers indexOfObject:vc];
+            }
+        }
+    }
+   
     
 }
 

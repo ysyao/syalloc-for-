@@ -16,7 +16,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) NSArray<WBOTitleItem *> *items;
 
+@property (nonatomic, strong) UIView *animateIndicator;
 
+
+@property (nonatomic, strong) UIStackView *indicatorStack;
 
 @end
 

@@ -12,7 +12,6 @@
 
 @property (nonatomic, strong) UIStackView *titleStack;
 
-@property (nonatomic, strong) UIStackView *indicatorStack;
 
 @end
 
@@ -65,7 +64,7 @@
         make.leading.mas_equalTo(self.mas_leading);
         make.trailing.mas_equalTo(self.mas_trailing);
         make.bottom.mas_equalTo(self.mas_bottom);
-        make.height.mas_equalTo(2);
+//        make.height.mas_equalTo(2);
     }];
     
     
@@ -116,9 +115,9 @@
             
             for (UIView *subview in self.indicatorStack.arrangedSubviews) {
                 
-                UIColor *bgcolor = (subview.tag == self.selectedItemIndex) ? self.items[self.selectedItemIndex].indicatorColor : UIColor.clearColor;
+//                UIColor *bgcolor = (subview.tag == self.selectedItemIndex) ? self.items[self.selectedItemIndex].indicatorColor : UIColor.clearColor;
                 
-                [subview.subviews.firstObject setBackgroundColor:bgcolor];
+                [subview.subviews.firstObject setBackgroundColor:UIColor.clearColor];
             }
         }
         return;
@@ -132,6 +131,7 @@
                 [self createIndicatorByItem:item];
             }
             self.selectedItemIndex = 0;
+            [self performAnimateIndicator];
         }
         return;
     }
@@ -164,14 +164,34 @@
     }];
 
     [self.indicatorStack addArrangedSubview:container];
-//    [container mas_makeConstraints:^(MASConstraintMaker *make) {
-//        make.width.mas_equalTo(100);
-//        make.height.mas_equalTo(2);
-//    }];
+}
+
+
+/// 将带有动画的indicator设置到某个indicatorstack下去并制定颜色
+- (void)performAnimateIndicator {
     
+    UIView *anchor = self.indicatorStack.arrangedSubviews[self.selectedItemIndex];
+    [self.animateIndicator removeFromSuperview];
+    [anchor addSubview:self.animateIndicator];
+    [self.animateIndicator setBackgroundColor:self.items[self.selectedItemIndex].indicatorColor];
+    [self.animateIndicator mas_updateConstraints:^(MASConstraintMaker *make) {
+        make.width.mas_equalTo(40);
+        make.height.mas_equalTo(2);
+        make.centerX.mas_equalTo(anchor.mas_centerX);
+        make.centerY.mas_equalTo(anchor.mas_centerY);
+    }];
 }
 
 #pragma mark getter
+
+- (UIView *)animateIndicator {
+    if (!_animateIndicator) {
+        _animateIndicator = [[UIView alloc] init];
+        _animateIndicator.layer.cornerRadius = 3;
+        [_animateIndicator setBackgroundColor:UIColor.blackColor];
+    }
+    return _animateIndicator;
+}
 
 - (UIStackView *)indicatorStack {
     if (!_indicatorStack) {
@@ -211,6 +231,8 @@
             NSUInteger index = [self.items indexOfObject:item];
             if (index == tag) {
                 self.selectedItemIndex = index;
+                
+                [self performAnimateIndicator];
                 item.block(item.title, index);
             }
         }

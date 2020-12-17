@@ -33,7 +33,6 @@
     
     [self setUpNavigationbar];
     
-    [self setUpViews];
 }
 
 #pragma mark - set up views
@@ -58,8 +57,7 @@
     self.navigationItem.leftBarButtonItems = @[leftPhotoItem, fixed1];
     self.navigationItem.rightBarButtonItems = @[rightMoreItem, rightRedPacketItem, fixed2];
     
-    WBOHomeTitleView *tv = [[WBOHomeTitleView alloc] initWithFrame:CGRectZero];
-    self.navigationItem.titleView = tv;
+    self.navigationItem.titleView = self.homeTitleView;
     
     /// https://stackoverflow.com/questions/46867592/swift-uitapgesture-on-view-in-a-titleview-not-working
     /// Swift UITapGesture on view in a titleView not working
@@ -71,7 +69,7 @@
     
     /// For more information see the WWDC 2017 session Updating your app for iOS 11.
     /// 总结：当titleView没有通过autolayout设置大小的时候，autolayout会用intrinsic content size（view最小size），这里默认为CGRectZero，因此不可能有点击事件触发。
-    [tv mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.homeTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(200);
         make.height.mas_equalTo(40);
     }];
@@ -90,19 +88,15 @@
         [weakSelf.scrollView moveScrollViewPage];
     }];
     
-    [tv setItems:@[
+    [self.homeTitleView setItems:@[
         item1,
         item2,
         item3
     ]];
     
-    self.homeTitleView = tv;
-    
+    [self performSelector:@selector(scrollView)];
 }
 
-- (void)setUpViews {
-    self.scrollView = [[WBOHomeScrollView alloc] initWithHomeTitleView:self.homeTitleView parentViewController:self];
-}
 
 - (UIBarButtonItem *)newUIBarButtonItemWithTarget:(id)target ImageName:(NSString *)imageNamed action:(SEL)action {
     UIImage *phoImage = [UIImage imageNamed:imageNamed];
@@ -117,8 +111,19 @@
     return _netKit;
 }
 
-#pragma mark - getters
+- (WBOHomeTitleView *)homeTitleView {
+    if (!_homeTitleView) {
+        _homeTitleView = [[WBOHomeTitleView alloc] initWithFrame:CGRectZero];
+    }
+    return _homeTitleView;
+}
 
+- (WBOHomeScrollView *)scrollView {
+    if (!_scrollView) {
+        _scrollView = [[WBOHomeScrollView alloc] initWithHomeTitleView:self.homeTitleView parentViewController:self];
+    }
+    return _scrollView;
+}
 
 
 #pragma mark - delegators

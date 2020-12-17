@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121E9399258B392F007AC22A /* message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 121E9398258B392F007AC22A /* message@3x.png */; };
 		123FA27A25874A8B0089CB56 /* more@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123FA27925874A8B0089CB56 /* more@3x.png */; };
 		123FA28325876DD70089CB56 /* redpacket@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 123FA28225876DD70089CB56 /* redpacket@3x.png */; };
 		1256C3DE258A476F0042A762 /* WBOHomeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1256C3DD258A476F0042A762 /* WBOHomeScrollView.m */; };
@@ -31,7 +32,6 @@
 		1283CF572587A98400910140 /* search_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF552587A98400910140 /* search_selected@3x.png */; };
 		1283CF5D2587AA9800910140 /* photo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF5A2587AA9800910140 /* photo@3x.png */; };
 		1283CF5E2587AA9800910140 /* message_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF5B2587AA9800910140 /* message_selected@3x.png */; };
-		1283CF5F2587AA9800910140 /* message@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF5C2587AA9800910140 /* message@3x.png */; };
 		1283CF622587AAD300910140 /* photo_selected@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 1283CF612587AAD300910140 /* photo_selected@3x.png */; };
 		1283CF6E2587B23F00910140 /* WBOHomeTitleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1283CF6D2587B23F00910140 /* WBOHomeTitleView.m */; };
 		1283CF732587B64400910140 /* WBOHomeTitleUIButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 1283CF722587B64400910140 /* WBOHomeTitleUIButton.m */; };
@@ -49,6 +49,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		121E9398258B392F007AC22A /* message@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message@3x.png"; sourceTree = "<group>"; };
 		123FA27925874A8B0089CB56 /* more@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more@3x.png"; sourceTree = "<group>"; };
 		123FA28225876DD70089CB56 /* redpacket@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "redpacket@3x.png"; sourceTree = "<group>"; };
 		1256C3DC258A476F0042A762 /* WBOHomeScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOHomeScrollView.h; sourceTree = "<group>"; };
@@ -86,7 +87,6 @@
 		1283CF552587A98400910140 /* search_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "search_selected@3x.png"; sourceTree = "<group>"; };
 		1283CF5A2587AA9800910140 /* photo@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo@3x.png"; sourceTree = "<group>"; };
 		1283CF5B2587AA9800910140 /* message_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "message_selected@3x.png"; sourceTree = "<group>"; };
-		1283CF5C2587AA9800910140 /* message@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "message@3x.png"; path = "../../../../../../Downloads/message@3x.png"; sourceTree = "<group>"; };
 		1283CF612587AAD300910140 /* photo_selected@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo_selected@3x.png"; sourceTree = "<group>"; };
 		1283CF6C2587B23F00910140 /* WBOHomeTitleView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WBOHomeTitleView.h; sourceTree = "<group>"; };
 		1283CF6D2587B23F00910140 /* WBOHomeTitleView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WBOHomeTitleView.m; sourceTree = "<group>"; };
@@ -208,7 +208,7 @@
 				12ADE285258868A600DE9950 /* screen_bg2.gif */,
 				12ADE28D2588997D00DE9950 /* launch_bg.jpg */,
 				1283CF5B2587AA9800910140 /* message_selected@3x.png */,
-				1283CF5C2587AA9800910140 /* message@3x.png */,
+				121E9398258B392F007AC22A /* message@3x.png */,
 				1283CF612587AAD300910140 /* photo_selected@3x.png */,
 				1283CF5A2587AA9800910140 /* photo@3x.png */,
 				1283CF552587A98400910140 /* search_selected@3x.png */,
@@ -407,11 +407,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1283CF5D2587AA9800910140 /* photo@3x.png in Resources */,
-				1283CF5F2587AA9800910140 /* message@3x.png in Resources */,
 				1283CF562587A98400910140 /* search@3x.png in Resources */,
 				12ADE28E2588997D00DE9950 /* launch_bg.jpg in Resources */,
 				1283CF4D2587A81300910140 /* timeline@3x.png in Resources */,
 				1283CF512587A8E500910140 /* video_selected@3x.png in Resources */,
+				121E9399258B392F007AC22A /* message@3x.png in Resources */,
 				123FA27A25874A8B0089CB56 /* more@3x.png in Resources */,
 				1283CF522587A8E500910140 /* video@3x.png in Resources */,
 				127910252584B3A8004DE687 /* public@3x.png in Resources */,
