@@ -100,7 +100,6 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    WBOLog(@"listen keypath : %@", keyPath);
     /// 监听selectedItemIndex，如果改变会：
     /// 1.修改选中item对应的title外观风格，黑色加粗字体更大
     /// 2.修改选中item对应的indicator颜色
@@ -120,6 +119,7 @@
                 [subview.subviews.firstObject setBackgroundColor:UIColor.clearColor];
             }
         }
+        [self performAnimateIndicator];
         return;
     }
     /// 监听items属性，当items设置值的时候会：
@@ -131,7 +131,7 @@
                 [self createIndicatorByItem:item];
             }
             self.selectedItemIndex = 0;
-            [self performAnimateIndicator];
+//            [self performAnimateIndicator];
         }
         return;
     }
@@ -166,14 +166,58 @@
     [self.indicatorStack addArrangedSubview:container];
 }
 
+- (void)setUpAnimateIndicatorGradientColorByMutiplier:(int)mutiplier {
+    // 设置渐变色
+    UIView *indicator = self.animateIndicator;
+    [indicator.layer.sublayers.firstObject removeFromSuperlayer];
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = indicator.bounds;
+    
+    NSMutableArray *itemColors = [[NSMutableArray alloc] init];
+    
+    if (mutiplier < 0) {
+        if ((self.selectedItemIndex - 1) < 0) {
+            [itemColors addObject:(__bridge id)self.items[self.selectedItemIndex].indicatorColor.CGColor];
+        } else {
+            [itemColors addObject:(__bridge id)self.items[self.selectedItemIndex - 1].indicatorColor.CGColor];
+            [itemColors addObject:(__bridge id)self.items[self.selectedItemIndex].indicatorColor.CGColor];
+        }
+    } else if(mutiplier > 0) {
+        if ((self.selectedItemIndex + 1) == self.items.count) {
+            [itemColors addObject:(__bridge id)self.items[self.selectedItemIndex].indicatorColor.CGColor];
+        } else {
+            [itemColors addObject:(__bridge id)self.items[self.selectedItemIndex].indicatorColor.CGColor];
+            [itemColors addObject:(__bridge id)self.items[self.selectedItemIndex + 1].indicatorColor.CGColor];
+        }
+    } else {
+        [self.animateIndicator.layer.sublayers.firstObject removeFromSuperlayer];
+        CALayer *layer = [CALayer new];
+        layer.frame = self.animateIndicator.bounds;
+        [self.animateIndicator.layer addSublayer:layer];
+        [self.animateIndicator.layer setBackgroundColor:self.items[self.selectedItemIndex].indicatorColor.CGColor];
+//        [itemColors addObject:(__bridge id)self.items[self.selectedItemIndex].indicatorColor.CGColor];
+//        [itemColors addObject:(__bridge id)self.items[self.selectedItemIndex].indicatorColor.CGColor];
+        return;
+    }
+    
+    gradient.colors = [itemColors copy];
+    gradient.startPoint = CGPointMake(0, 0.5);
+    gradient.endPoint = CGPointMake(1, 0.5);
+
+    [indicator.layer addSublayer:gradient];
+}
 
 /// 将带有动画的indicator设置到某个indicatorstack下去并制定颜色
 - (void)performAnimateIndicator {
-    
+    if (!self.indicatorStack.arrangedSubviews || self.indicatorStack.arrangedSubviews.count < 1 || !self.items || self.items.count < 1) {
+        return;
+    }
     UIView *anchor = self.indicatorStack.arrangedSubviews[self.selectedItemIndex];
     [self.animateIndicator removeFromSuperview];
     [anchor addSubview:self.animateIndicator];
-    [self.animateIndicator setBackgroundColor:self.items[self.selectedItemIndex].indicatorColor];
+    
+    [self setUpAnimateIndicatorGradientColorByMutiplier:0];
+//    [self.animateIndicator setBackgroundColor:self.items[self.selectedItemIndex].indicatorColor];
     [self.animateIndicator mas_updateConstraints:^(MASConstraintMaker *make) {
         make.width.mas_equalTo(40);
         make.height.mas_equalTo(2);
@@ -231,8 +275,6 @@
             NSUInteger index = [self.items indexOfObject:item];
             if (index == tag) {
                 self.selectedItemIndex = index;
-                
-                [self performAnimateIndicator];
                 item.block(item.title, index);
             }
         }

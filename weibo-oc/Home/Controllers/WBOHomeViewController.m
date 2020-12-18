@@ -76,16 +76,16 @@
     
     weakSelf();
     WBOTitleItem *item1 = [[WBOTitleItem alloc] initWithTitle:@"关注" indicatorColor:UIColor.orangeColor viewControllerClass:WBOFollowingViewController.class block:^(NSString * _Nonnull title, NSUInteger index) {
-        WBOLog(@"guanzu");
         [weakSelf.scrollView moveScrollViewPage];
+        WBOLog(@"guanzu");
     }];
     WBOTitleItem *item2 = [[WBOTitleItem alloc] initWithTitle:@"推荐" indicatorColor:UIColor.redColor viewControllerClass:WBORecommendViewController.class block:^(NSString * _Nonnull title, NSUInteger index) {
-        WBOLog(@"tuijian");
         [weakSelf.scrollView moveScrollViewPage];
+        WBOLog(@"tuijian");
     }];
-    WBOTitleItem *item3 = [[WBOTitleItem alloc] initWithTitle:@"视频" indicatorColor:UIColor.redColor viewControllerClass:WBOFollowingViewController.class block:^(NSString * _Nonnull title, NSUInteger index) {
-        WBOLog(@"tuijian");
+    WBOTitleItem *item3 = [[WBOTitleItem alloc] initWithTitle:@"视频" indicatorColor:UIColor.blueColor viewControllerClass:WBOFollowingViewController.class block:^(NSString * _Nonnull title, NSUInteger index) {
         [weakSelf.scrollView moveScrollViewPage];
+        WBOLog(@"tuijian");
     }];
     
     [self.homeTitleView setItems:@[

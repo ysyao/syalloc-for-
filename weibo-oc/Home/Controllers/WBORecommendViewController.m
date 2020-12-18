@@ -17,7 +17,7 @@
     [super viewDidLoad];
     
     
-    [self.view setBackgroundColor:UIColor.redColor];
+    [self.view setBackgroundColor:UIColor.lightGrayColor];
     
 }
 

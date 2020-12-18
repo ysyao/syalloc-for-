@@ -21,6 +21,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong) UIStackView *indicatorStack;
 
+/// 将带有动画的indicator设置到某个indicatorstack下去并制定颜色
+- (void)performAnimateIndicator;
+
+- (void)setUpAnimateIndicatorGradientColorByMutiplier:(int)mutiplier;
+
 @end
 
 

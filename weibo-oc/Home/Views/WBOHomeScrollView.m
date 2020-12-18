@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSMutableArray<UIViewController *> *childViewControllers;
 
 
+
 @end
 
 @implementation WBOHomeScrollView
@@ -91,9 +92,8 @@
 //}
 
 - (void)moveScrollViewPage {
-    
     CGPoint point = CGPointMake(self.titleView.selectedItemIndex * self.parentVc.view.frame.size.width, self.contentOffset.y);
-    [self setContentOffset:point animated:YES];
+    [self setContentOffset:point animated:NO];
 }
 
 #pragma mark - getters
@@ -106,67 +106,76 @@
 
 #pragma mark - delegator
 
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    
-}
-
-- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate {
-    
-}
-
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
     
-//    if (!scrollView.isDragging) {
-//        return;
-//    }
+    
     // 滑动连带titleview的tab下方动画
     if (self.titleView.items.count > 1) {
-        CGFloat offset = scrollView.contentOffset.x - self.parentVc.view.frame.size.width * self.titleView.selectedItemIndex;
+        
+        UIViewController *vc = self.childViewControllers[self.titleView.selectedItemIndex];
+        
+//        CGFloat offset = scrollView.contentOffset.x - self.parentVc.view.frame.size.width * self.titleView.selectedItemIndex;
+        CGFloat offset = scrollView.contentOffset.x - vc.view.frame.origin.x;
         CGFloat screenLength = self.parentVc.view.frame.size.width / 2;
-
+        
         UIView *container = self.titleView.indicatorStack.arrangedSubviews[self.titleView.selectedItemIndex];
         UIView *indicator = self.titleView.animateIndicator;
 
         CGFloat tabMoveLength = container.frame.size.width;
 
 
-        /// 动画：向右滑动动画
-        if (offset > 0) {
-            if (offset <= screenLength) {
-                CGFloat tabOffset = offset / screenLength * tabMoveLength;
-                [indicator mas_updateConstraints:^(MASConstraintMaker *make) {
+        /// 动画：向右滑动动画mutiplier=1，向左滑动mutiplier=-1
+        CGFloat mutiplier = 0;
+        if (offset < 0) {
+            mutiplier = -1;
+        } else if(offset > 0) {
+            mutiplier = 1;
+        }
+        
+        
+//        WBOLog(@"leftright: %f", offset);
+        if (fabs(offset) <= screenLength) {
+            
+            CGFloat tabOffset = offset * mutiplier / screenLength * tabMoveLength;
+            [indicator mas_updateConstraints:^(MASConstraintMaker *make) {
 
-                    CGFloat w = 40 + tabOffset;
-                    make.width.mas_equalTo(w);
+                CGFloat w = 40 + tabOffset;
+                make.width.mas_equalTo(w);
 
-                    CGFloat centerXOffset = w / 2;
-                    make.centerX.mas_equalTo(container.mas_centerX).with.offset(centerXOffset - 20);
-                }];
-                // 设置渐变色
-//                CAGradientLayer *gradient = [CAGradientLayer layer];
-//                gradient.frame = indicator.bounds;
-//                gradient.colors = @[
-//                    (id)self.titleView.items[self.titleView.selectedItemIndex].indicatorColor.CGColor,
-//                    (id)self.titleView.items[self.titleView.selectedItemIndex + 1].indicatorColor.CGColor
-//                ];
-//                gradient.startPoint = CGPointMake(0, 0);
-//                gradient.endPoint = CGPointMake(0, 1);
-//                
-//                [indicator.layer addSublayer:gradient];
+                CGFloat centerXOffset = w / 2;
+                CGFloat xOffset = (centerXOffset - 20) * mutiplier;
+                WBOLog(@"xOffset:%f", xOffset);
+                make.centerX.mas_equalTo(container.mas_centerX).with.offset(xOffset);
+            }];
+            
+            if (fabs(offset) > screenLength / 2) {
+                [self.titleView setUpAnimateIndicatorGradientColorByMutiplier:mutiplier];
             } else {
-                CGFloat originCenterOffset = container.frame.size.width / 2;
-                CGFloat mostLength = (container.frame.size.width + 40);
-                CGFloat tabOffset = (offset - screenLength) /  screenLength * tabMoveLength;
-                [indicator mas_updateConstraints:^(MASConstraintMaker *make) {
+                [self.titleView setUpAnimateIndicatorGradientColorByMutiplier:0];
+            }
+        } else {
+            CGFloat originCenterOffset = container.frame.size.width / 2;
+            CGFloat mostLength = (container.frame.size.width + 40);
+            CGFloat tabOffset = (offset * mutiplier - screenLength) /  screenLength * tabMoveLength;
+            [indicator mas_updateConstraints:^(MASConstraintMaker *make) {
 
-                    CGFloat w = mostLength - tabOffset;
-                    make.width.mas_equalTo(w);
+                CGFloat w = mostLength - tabOffset;
+                make.width.mas_equalTo(w);
 
-                    CGFloat margin = (container.frame.size.width - 40) / 2;
-                    CGFloat centerXOffset =  w / 2 - (margin + 40 - tabOffset);
+                CGFloat margin = (container.frame.size.width - 40) / 2;
+                CGFloat centerXOffset =  w / 2 - (margin + 40 - tabOffset);
 
-                    make.centerX.mas_equalTo(container.mas_centerX).with.offset(centerXOffset + originCenterOffset);
-                }];
+                CGFloat xOffset = (centerXOffset + originCenterOffset) * mutiplier;
+                
+                WBOLog(@"xOffset:%f", xOffset);
+                make.centerX.mas_equalTo(container.mas_centerX).with.offset(xOffset);
+            }];
+            
+            
+            if (fabs(offset) > screenLength / 2) {
+                [self.titleView setUpAnimateIndicatorGradientColorByMutiplier:mutiplier];
+            } else {
+                [self.titleView setUpAnimateIndicatorGradientColorByMutiplier:0];
             }
         }
         
@@ -184,5 +193,7 @@
    
     
 }
+
+
 
 @end
