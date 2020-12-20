@@ -58,6 +58,7 @@
     self.navigationItem.rightBarButtonItems = @[rightMoreItem, rightRedPacketItem, fixed2];
     
     self.navigationItem.titleView = self.homeTitleView;
+//    self.navigationController.navigationBar.translucent = NO;
     
     /// https://stackoverflow.com/questions/46867592/swift-uitapgesture-on-view-in-a-titleview-not-working
     /// Swift UITapGesture on view in a titleView not working
@@ -70,7 +71,7 @@
     /// For more information see the WWDC 2017 session Updating your app for iOS 11.
     /// 总结：当titleView没有通过autolayout设置大小的时候，autolayout会用intrinsic content size（view最小size），这里默认为CGRectZero，因此不可能有点击事件触发。
     [self.homeTitleView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(200);
+        make.width.mas_equalTo(120);
         make.height.mas_equalTo(40);
     }];
     
@@ -83,15 +84,10 @@
         [weakSelf.scrollView moveScrollViewPage];
         WBOLog(@"tuijian");
     }];
-    WBOTitleItem *item3 = [[WBOTitleItem alloc] initWithTitle:@"视频" indicatorColor:UIColor.blueColor viewControllerClass:WBOFollowingViewController.class block:^(NSString * _Nonnull title, NSUInteger index) {
-        [weakSelf.scrollView moveScrollViewPage];
-        WBOLog(@"tuijian");
-    }];
     
     [self.homeTitleView setItems:@[
         item1,
-        item2,
-        item3
+        item2
     ]];
     
     [self performSelector:@selector(scrollView)];

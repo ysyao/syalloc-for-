@@ -26,6 +26,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)setUpAnimateIndicatorGradientColorByMutiplier:(int)mutiplier;
 
++ (CGFloat)animatedIndicatorWidth;
+
++ (CGFloat)animatedIndicatorHeight;
+
 @end
 
 

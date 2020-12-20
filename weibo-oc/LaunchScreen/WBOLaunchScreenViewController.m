@@ -134,7 +134,8 @@
     /// How to resolve: 'keyWindow' was deprecated in iOS 13.0
     UIWindow *keyWindow = [WBOUtils findKeyWindow:[UIApplication sharedApplication].windows];
     if (keyWindow) {
-        keyWindow.rootViewController = self. tabBarController;
+        keyWindow.rootViewController = self.tabBarController;
+//        [self.tabBarController.tabBar setTranslucent:NO];
         /// view动画
         /// https://stackoverflow.com/questions/41144523/swap-rootviewcontroller-with-animation
         /// Swap rootViewController with animation?

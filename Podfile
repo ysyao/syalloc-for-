@@ -10,5 +10,6 @@ target 'weibo-oc' do
   pod 'SDWebImage', '~> 5.0'
   pod 'Masonry'
   pod 'YYModel'
+  pod 'MJRefresh'
 
 end

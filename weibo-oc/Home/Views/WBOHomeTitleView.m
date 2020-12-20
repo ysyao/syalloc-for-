@@ -46,6 +46,14 @@
 }
 
 
++ (CGFloat)animatedIndicatorHeight {
+    return 3.0;
+}
+
++ (CGFloat)animatedIndicatorWidth {
+    return 40.0;
+}
+
 #pragma mark - 初始化view
 - (void)initSubviews {
     [self addSubview:self.titleStack];
@@ -63,8 +71,7 @@
         make.top.mas_equalTo(self.titleStack.mas_bottom);
         make.leading.mas_equalTo(self.mas_leading);
         make.trailing.mas_equalTo(self.mas_trailing);
-        make.bottom.mas_equalTo(self.mas_bottom);
-//        make.height.mas_equalTo(2);
+        make.height.mas_equalTo(3);
     }];
     
     
@@ -157,8 +164,8 @@
     
     [container addSubview:indicator];
     [indicator mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(40);
-        make.height.mas_equalTo(2);
+        make.width.mas_equalTo(WBOHomeTitleView.animatedIndicatorWidth);
+        make.height.mas_equalTo(WBOHomeTitleView.animatedIndicatorHeight);
         make.centerX.mas_equalTo(container.mas_centerX);
         make.centerY.mas_equalTo(container.mas_centerY);
     }];
@@ -168,6 +175,8 @@
 
 - (void)setUpAnimateIndicatorGradientColorByMutiplier:(int)mutiplier {
     // 设置渐变色
+    /// https://www.ucloud.cn/yun/17023.html
+    /// CAGradientLayer用法
     UIView *indicator = self.animateIndicator;
     [indicator.layer.sublayers.firstObject removeFromSuperlayer];
     CAGradientLayer *gradient = [CAGradientLayer layer];
@@ -190,19 +199,20 @@
             [itemColors addObject:(__bridge id)self.items[self.selectedItemIndex + 1].indicatorColor.CGColor];
         }
     } else {
+        
+        // mutiplier = 0 的情况，只需要展示预设的背景色
         [self.animateIndicator.layer.sublayers.firstObject removeFromSuperlayer];
         CALayer *layer = [CALayer new];
         layer.frame = self.animateIndicator.bounds;
         [self.animateIndicator.layer addSublayer:layer];
         [self.animateIndicator.layer setBackgroundColor:self.items[self.selectedItemIndex].indicatorColor.CGColor];
-//        [itemColors addObject:(__bridge id)self.items[self.selectedItemIndex].indicatorColor.CGColor];
-//        [itemColors addObject:(__bridge id)self.items[self.selectedItemIndex].indicatorColor.CGColor];
         return;
     }
     
     gradient.colors = [itemColors copy];
     gradient.startPoint = CGPointMake(0, 0.5);
     gradient.endPoint = CGPointMake(1, 0.5);
+    gradient.cornerRadius = 3;
 
     [indicator.layer addSublayer:gradient];
 }
@@ -217,10 +227,10 @@
     [anchor addSubview:self.animateIndicator];
     
     [self setUpAnimateIndicatorGradientColorByMutiplier:0];
-//    [self.animateIndicator setBackgroundColor:self.items[self.selectedItemIndex].indicatorColor];
+
     [self.animateIndicator mas_updateConstraints:^(MASConstraintMaker *make) {
-        make.width.mas_equalTo(40);
-        make.height.mas_equalTo(2);
+        make.width.mas_equalTo(WBOHomeTitleView.animatedIndicatorWidth);
+        make.height.mas_equalTo(WBOHomeTitleView.animatedIndicatorHeight);
         make.centerX.mas_equalTo(anchor.mas_centerX);
         make.centerY.mas_equalTo(anchor.mas_centerY);
     }];
@@ -242,9 +252,6 @@
         _indicatorStack = [[UIStackView alloc] init];
         [_indicatorStack setAlignment:UIStackViewAlignmentCenter];
         [_indicatorStack setDistribution:UIStackViewDistributionFillEqually];
-//        [_indicatorStack setLayoutMargins:UIEdgeInsetsMake(0, 30, 0, 30)];
-//        [_indicatorStack setDirectionalLayoutMargins:NSDirectionalEdgeInsetsMake(0, 30, 0, 30)];
-//        [_indicatorStack setSpacing:50];
     }
     return _indicatorStack;
 }
